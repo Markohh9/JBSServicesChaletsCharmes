@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue des Chalets</title>
+    <link rel="stylesheet" href="./style/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="./index.html" class="logo">
+            <img src="./style/img/logo-jbs-services-chalet-vosges.png" alt="Logo de l'entreprise">
+        </a>
+        <nav>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">ACCUEIL</a></li>
+                <li><a href="catalogue.html">NOS CHALETS</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Nos Chalets</h1>
+            <p class="h1-title">Découvrez dès maintenant tout les chalets que nous proposons !</p>
+            <a class="btn"  href="#chalet-list"> Voir nos chalets </a>
+        </div>
+    </section>
+    
+    <section class="filter-section">
+        <button class="filter-toggle">
+            <span class="arrow">&#x21E7;</span> <!-- Flèche vers le bas -->
+        </button>
+        <div class="filters" id="filter-options">
+            <h2>Filtrer les Chalets</h2>
+            <button class="filter-btn" data-filter="small">Petits Chalets</button>
+            <button class="filter-btn" data-filter="medium">Chalets Moyens</button>
+            <button class="filter-btn" data-filter="large">Grands Chalets</button>
+        </div>
+    </section>
+    
+
+    <section class="catalogue" id="chalet-list"></section>
+    
+    <footer id="contact" class="footer">
+        <p class="footer-p-1">Contactez-nous par téléphone ou par mail !</p>
+        <a class="footer-link" href="mailto:jambix88@icloud.fr">jambix88@icloud.fr</a>
+        <a class="footer-link" href="tel:+33648080990">06 48 08 09 90</a>
+        <p class="footer-p">JBS SERVICES les chalets des Vosges <br>
+        Limoges, France</p>
+        <p class="footer-p">© 2024 - 2025 JBS SERVICES les chalets des Vosges</p>
+    </footer>
+
+    <script src="catalogue.js"></script>
+</body>
+</html>
