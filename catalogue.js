@@ -130,6 +130,17 @@ document.addEventListener('DOMContentLoaded', () => {
             "text3": "• 2 espaces salle de bain séparés : un plus grand et un plus compact, pour votre plus grand confort.",
             "text4": "• Fabriqué en bois de conifères de haute qualité, offrant des propriétés d'isolation naturelle au bâtiment et un environnement de vie sain."
         },
+        {
+            "nom": "Chalet en bois Gilles",
+            "surface": "96 m²",
+            "description": "Un grand espace pour les repas et la détente, qui peut devenir votre nouvel endroit préféré avec beaucoup de lumière et de rires.",
+            "image": "./style/img/Chalet-En-Bois-Qualité-Mauricette-80m2.jpg",
+            "Terrasse": "35m² et 14m²",
+            "text1": "• Trois salles de bains et une penderie facile d'accès pour votre confort.",
+            "text2": "• Une allure moderne mais compacte, assurée par un toit à double pente, un bardage vertical et de nombreuses fenêtres.",
+            "text3": "• Trois chambres à coucher qui peuvent être utilisées pour votre famille et vos invités, ou converties en bureau de travail à domicile.",
+            "text4": "• La possibilité de choisir une terrasse en supplément pour s'amuser en plein air."
+        },
 
     ]
     

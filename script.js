@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.services-section, .gallery-section, .footer');
+    const header = document.querySelector('.header');
 
+    // Fonction pour vérifier la visibilité des sections
     function checkVisibility() {
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
@@ -10,15 +12,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Vérifier la visibilité dès le chargement de la page
+    // Fonction pour changer la couleur de la navbar lors du défilement
+    function handleScroll() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+
+    // Vérifier la visibilité des sections dès le chargement de la page
     checkVisibility();
 
-    // Vérifier à chaque fois que l'utilisateur fait défiler la page
-    window.addEventListener('scroll', checkVisibility);
-});
+    // Écouter l'événement de défilement pour ajuster la navbar et vérifier la visibilité des sections
+    window.addEventListener('scroll', () => {
+        checkVisibility();
+        handleScroll();
+    });
 
-
-
+    // Fonction d'affichage des chalets (déjà dans votre code)
     function afficherChalets(liste) {
         const container = document.getElementById("chalet-list");
         container.innerHTML = "";
@@ -35,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Gestion des filtres pour les chalets
     document.querySelectorAll('.filter-btn').forEach(button => {
         button.addEventListener('click', (e) => {
             const filter = e.target.getAttribute('data-filter');
