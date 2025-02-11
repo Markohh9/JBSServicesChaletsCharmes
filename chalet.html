@@ -42,6 +42,35 @@
     </div>
 
     <script>
+
+const optionsImages = {
+            "Base à ossature en bois": "./style/img/ossature-bois.png",
+            "Revêtement de sol en vinyle": "./style/img/Revetementdesolvinyle.png",
+            "Toiture métallique Terrano": "./style/img/Toituremetalliqueterrano.png",
+            "Service montage": "./style/img/Servicemontage.png",
+            "Abri à outils": "./style/img/abriaoutils.png",
+            "Kit terrasse": "./style/img/kitaterrasse.png",
+            "PVC fenêtres et portes - anthracite": "./style/img/porte-fenetre-pvc-anthracite.png",
+            "PVC fenêtres et portes": "./style/img/porte-fenetre-pvc.png",
+            "Volets roulants aluminium": "./style/img/volets-roulant-aluminium.png",
+            "Récupérateur": "./style/img/récupérateur.png",
+            "Abri Bûches": "./style/img/abri-buches.png",
+            "Jardinière": "./style/img/jardiniere.png",
+            "Auvent": "./style/img/auvent.png",
+            "Kit de couverture": "./style/img/kit-couverture.png",
+            "Lot de traitement": "./style/img/peintures.png",
+            "Système de gouttières": "./style/img/goutiere.png",
+            "Couverture en bardeau": "./style/img/couverture-en-bardeau.png",
+            "Peintures": "./style/img/peintures.png"
+        };
+
+        function getOptionImage(option) {
+            const matchingKey = Object.keys(optionsImages).find(key => 
+                option.toLowerCase().includes(key.toLowerCase())
+            );
+            return matchingKey ? optionsImages[matchingKey] : './style/img/options/default-option.jpg';
+        }
+
         const urlParams = new URLSearchParams(window.location.search);
         const chaletId = parseInt(urlParams.get('id'));
         const chalets = [{
@@ -62,14 +91,25 @@
                     "./style/img/Sabine-Plan2-Chalet.jpg"
                 ],
                 "options": [
-                    "Gouttières en aluminium",
-                    "Peinture extérieure personnalisée",
-                    "Installation électrique complète",
-                    "Système de chauffage",
-                    "Isolation renforcée",
-                    "Volets roulants motorisés",
-                    "Plancher chauffant",
-                    "Traitement du bois premium"
+                    "Base à ossature en bois",
+                    "Revêtement de sol en vinyle",
+                    "Toiture métallique Terrano",
+                    "Service montage (kit de base hors options)",
+                    "Abri à outils - 161 x 273 cm",
+                    "Kit terrasse",
+                    "PVC fenêtres et portes - anthracite",
+                    "Volets roulants aluminium pour fenêtres / portes - anthracite",
+                    "Récupérateur VL-80U5-E",
+                    "Abri Bûches - 200 x 144 cm",
+                    "Jardinière - 70 x 22 cm",
+                    "Auvent - 300 x 150 cm",
+                    "PVC fenêtres et portes - Blanc",
+                    "Kit de couverture en bac acier",
+                    "Lot de traitement du bois (extérieur) - Incolore",
+                    "Volets roulants aluminium pour fenêtres / portes - blanc",
+                    "Système de gouttières en acier Ruukki - gris anthracite",
+                    "Couverture en bardeau bitumé",
+                    "Peintures pour habitations TIKKURILA Ultra Classic"
                 ]
             },
             {
@@ -90,14 +130,25 @@
                     "./style/img/Alain-Plan2-Chalet.jpg"
                 ],
                 "options": [
-                    "Gouttières en aluminium",
-                    "Peinture extérieure personnalisée",
-                    "Installation électrique complète",
-                    "Système de chauffage",
-                    "Isolation renforcée",
-                    "Volets roulants motorisés",
-                    "Plancher chauffant",
-                    "Traitement du bois premium"
+                    "Base à ossature en bois",
+                    "Revêtement de sol en vinyle",
+                    "Toiture métallique Terrano",
+                    "Service montage (kit de base hors options)",
+                    "Abri à outils - 161 x 273 cm",
+                    "Kit terrasse",
+                    "PVC fenêtres et portes - anthracite",
+                    "Volets roulants aluminium pour fenêtres / portes - anthracite",
+                    "Récupérateur VL-80U5-E",
+                    "Abri Bûches - 200 x 144 cm",
+                    "Jardinière - 70 x 22 cm",
+                    "Auvent - 300 x 150 cm",
+                    "PVC fenêtres et portes - Blanc",
+                    "Kit de couverture en bac acier",
+                    "Lot de traitement du bois (extérieur) - Incolore",
+                    "Volets roulants aluminium pour fenêtres / portes - blanc",
+                    "Système de gouttières en acier Ruukki - gris anthracite",
+                    "Couverture en bardeau bitumé",
+                    "Peintures pour habitations TIKKURILA Ultra Classic"
                 ]
             },
             {
@@ -118,14 +169,25 @@
                     "./style/img/Helene-Plan2-Chalet.jpg"
                 ],
                 "options": [
-                    "Gouttières en aluminium",
-                    "Peinture extérieure personnalisée",
-                    "Installation électrique complète",
-                    "Système de chauffage",
-                    "Isolation renforcée",
-                    "Volets roulants motorisés",
-                    "Plancher chauffant",
-                    "Traitement du bois premium"
+                    "Base à ossature en bois",
+                    "Revêtement de sol en vinyle",
+                    "Toiture métallique Terrano",
+                    "Service montage (kit de base hors options)",
+                    "Abri à outils - 161 x 273 cm",
+                    "Kit terrasse",
+                    "PVC fenêtres et portes - anthracite",
+                    "Volets roulants aluminium pour fenêtres / portes - anthracite",
+                    "Récupérateur VL-80U5-E",
+                    "Abri Bûches - 200 x 144 cm",
+                    "Jardinière - 70 x 22 cm",
+                    "Auvent - 300 x 150 cm",
+                    "PVC fenêtres et portes - Blanc",
+                    "Kit de couverture en bac acier",
+                    "Lot de traitement du bois (extérieur) - Incolore",
+                    "Volets roulants aluminium pour fenêtres / portes - blanc",
+                    "Système de gouttières en acier Ruukki - gris anthracite",
+                    "Couverture en bardeau bitumé",
+                    "Peintures pour habitations TIKKURILA Ultra Classic"
                 ]
             },
             {
@@ -147,14 +209,25 @@
                     "./style/img/Theo-Plan3-Chalet.jpg"
                 ],
                 "options": [
-                    "Gouttières en aluminium",
-                    "Peinture extérieure personnalisée",
-                    "Installation électrique complète",
-                    "Système de chauffage",
-                    "Isolation renforcée",
-                    "Volets roulants motorisés",
-                    "Plancher chauffant",
-                    "Traitement du bois premium"
+                    "Base à ossature en bois",
+                    "Revêtement de sol en vinyle",
+                    "Toiture métallique Terrano",
+                    "Service montage (kit de base hors options)",
+                    "Abri à outils - 161 x 273 cm",
+                    "Kit terrasse",
+                    "PVC fenêtres et portes - anthracite",
+                    "Volets roulants aluminium pour fenêtres / portes - anthracite",
+                    "Récupérateur VL-80U5-E",
+                    "Abri Bûches - 200 x 144 cm",
+                    "Jardinière - 70 x 22 cm",
+                    "Auvent - 300 x 150 cm",
+                    "PVC fenêtres et portes - Blanc",
+                    "Kit de couverture en bac acier",
+                    "Lot de traitement du bois (extérieur) - Incolore",
+                    "Volets roulants aluminium pour fenêtres / portes - blanc",
+                    "Système de gouttières en acier Ruukki - gris anthracite",
+                    "Couverture en bardeau bitumé",
+                    "Peintures pour habitations TIKKURILA Ultra Classic"
                 ]
             },
             {
@@ -175,14 +248,25 @@
                     "./style/img/Alhena-Plan2-Chalet.jpg"
                 ],
                 "options": [
-                    "Gouttières en aluminium",
-                    "Peinture extérieure personnalisée",
-                    "Installation électrique complète",
-                    "Système de chauffage",
-                    "Isolation renforcée",
-                    "Volets roulants motorisés",
-                    "Plancher chauffant",
-                    "Traitement du bois premium"
+                    "Base à ossature en bois",
+                    "Revêtement de sol en vinyle",
+                    "Toiture métallique Terrano",
+                    "Service montage (kit de base hors options)",
+                    "Abri à outils - 161 x 273 cm",
+                    "Kit terrasse",
+                    "PVC fenêtres et portes - anthracite",
+                    "Volets roulants aluminium pour fenêtres / portes - anthracite",
+                    "Récupérateur VL-80U5-E",
+                    "Abri Bûches - 200 x 144 cm",
+                    "Jardinière - 70 x 22 cm",
+                    "Auvent - 300 x 150 cm",
+                    "PVC fenêtres et portes - Blanc",
+                    "Kit de couverture en bac acier",
+                    "Lot de traitement du bois (extérieur) - Incolore",
+                    "Volets roulants aluminium pour fenêtres / portes - blanc",
+                    "Système de gouttières en acier Ruukki - gris anthracite",
+                    "Couverture en bardeau bitumé",
+                    "Peintures pour habitations TIKKURILA Ultra Classic"
                 ]
             },
             {
@@ -204,14 +288,25 @@
                     "./style/img/Alvin-Plan3-Chalet.jpg"
                 ],
                 "options": [
-                    "Gouttières en aluminium",
-                    "Peinture extérieure personnalisée",
-                    "Installation électrique complète",
-                    "Système de chauffage",
-                    "Isolation renforcée",
-                    "Volets roulants motorisés",
-                    "Plancher chauffant",
-                    "Traitement du bois premium"
+                    "Base à ossature en bois",
+                    "Revêtement de sol en vinyle",
+                    "Toiture métallique Terrano",
+                    "Service montage (kit de base hors options)",
+                    "Abri à outils - 161 x 273 cm",
+                    "Kit terrasse",
+                    "PVC fenêtres et portes - anthracite",
+                    "Volets roulants aluminium pour fenêtres / portes - anthracite",
+                    "Récupérateur VL-80U5-E",
+                    "Abri Bûches - 200 x 144 cm",
+                    "Jardinière - 70 x 22 cm",
+                    "Auvent - 300 x 150 cm",
+                    "PVC fenêtres et portes - Blanc",
+                    "Kit de couverture en bac acier",
+                    "Lot de traitement du bois (extérieur) - Incolore",
+                    "Volets roulants aluminium pour fenêtres / portes - blanc",
+                    "Système de gouttières en acier Ruukki - gris anthracite",
+                    "Couverture en bardeau bitumé",
+                    "Peintures pour habitations TIKKURILA Ultra Classic"
                 ]
             },
             {
@@ -234,14 +329,25 @@
                     "./style/img/Marie-Plan4-Chalet.jpg",
                 ],
                 "options": [
-                    "Gouttières en aluminium",
-                    "Peinture extérieure personnalisée",
-                    "Installation électrique complète",
-                    "Système de chauffage",
-                    "Isolation renforcée",
-                    "Volets roulants motorisés",
-                    "Plancher chauffant",
-                    "Traitement du bois premium"
+                    "Base à ossature en bois",
+                    "Revêtement de sol en vinyle",
+                    "Toiture métallique Terrano",
+                    "Service montage (kit de base hors options)",
+                    "Abri à outils - 161 x 273 cm",
+                    "Kit terrasse",
+                    "PVC fenêtres et portes - anthracite",
+                    "Volets roulants aluminium pour fenêtres / portes - anthracite",
+                    "Récupérateur VL-80U5-E",
+                    "Abri Bûches - 200 x 144 cm",
+                    "Jardinière - 70 x 22 cm",
+                    "Auvent - 300 x 150 cm",
+                    "PVC fenêtres et portes - Blanc",
+                    "Kit de couverture en bac acier",
+                    "Lot de traitement du bois (extérieur) - Incolore",
+                    "Volets roulants aluminium pour fenêtres / portes - blanc",
+                    "Système de gouttières en acier Ruukki - gris anthracite",
+                    "Couverture en bardeau bitumé",
+                    "Peintures pour habitations TIKKURILA Ultra Classic"
                 ]
             },
             {
@@ -263,14 +369,25 @@
                     "./style/img/Davi-Plan3-Chalet.jpg"
                 ],
                 "options": [
-                    "Gouttières en aluminium",
-                    "Peinture extérieure personnalisée",
-                    "Installation électrique complète",
-                    "Système de chauffage",
-                    "Isolation renforcée",
-                    "Volets roulants motorisés",
-                    "Plancher chauffant",
-                    "Traitement du bois premium"
+                    "Base à ossature en bois",
+                    "Revêtement de sol en vinyle",
+                    "Toiture métallique Terrano",
+                    "Service montage (kit de base hors options)",
+                    "Abri à outils - 161 x 273 cm",
+                    "Kit terrasse",
+                    "PVC fenêtres et portes - anthracite",
+                    "Volets roulants aluminium pour fenêtres / portes - anthracite",
+                    "Récupérateur VL-80U5-E",
+                    "Abri Bûches - 200 x 144 cm",
+                    "Jardinière - 70 x 22 cm",
+                    "Auvent - 300 x 150 cm",
+                    "PVC fenêtres et portes - Blanc",
+                    "Kit de couverture en bac acier",
+                    "Lot de traitement du bois (extérieur) - Incolore",
+                    "Volets roulants aluminium pour fenêtres / portes - blanc",
+                    "Système de gouttières en acier Ruukki - gris anthracite",
+                    "Couverture en bardeau bitumé",
+                    "Peintures pour habitations TIKKURILA Ultra Classic"
                 ]
             },
             {
@@ -291,14 +408,25 @@
                     "./style/img/Gabriel-Plan2-Chalet.jpg"
                 ],
                 "options": [
-                    "Gouttières en aluminium",
-                    "Peinture extérieure personnalisée",
-                    "Installation électrique complète",
-                    "Système de chauffage",
-                    "Isolation renforcée",
-                    "Volets roulants motorisés",
-                    "Plancher chauffant",
-                    "Traitement du bois premium"
+                    "Base à ossature en bois",
+                    "Revêtement de sol en vinyle",
+                    "Toiture métallique Terrano",
+                    "Service montage (kit de base hors options)",
+                    "Abri à outils - 161 x 273 cm",
+                    "Kit terrasse",
+                    "PVC fenêtres et portes - anthracite",
+                    "Volets roulants aluminium pour fenêtres / portes - anthracite",
+                    "Récupérateur VL-80U5-E",
+                    "Abri Bûches - 200 x 144 cm",
+                    "Jardinière - 70 x 22 cm",
+                    "Auvent - 300 x 150 cm",
+                    "PVC fenêtres et portes - Blanc",
+                    "Kit de couverture en bac acier",
+                    "Lot de traitement du bois (extérieur) - Incolore",
+                    "Volets roulants aluminium pour fenêtres / portes - blanc",
+                    "Système de gouttières en acier Ruukki - gris anthracite",
+                    "Couverture en bardeau bitumé",
+                    "Peintures pour habitations TIKKURILA Ultra Classic"
                 ]
             },
             {
@@ -319,14 +447,25 @@
                     "./style/img/Jeanne-Plan2-Chalet.jpg"
                 ],
                 "options": [
-                    "Gouttières en aluminium",
-                    "Peinture extérieure personnalisée",
-                    "Installation électrique complète",
-                    "Système de chauffage",
-                    "Isolation renforcée",
-                    "Volets roulants motorisés",
-                    "Plancher chauffant",
-                    "Traitement du bois premium"
+                    "Base à ossature en bois",
+                    "Revêtement de sol en vinyle",
+                    "Toiture métallique Terrano",
+                    "Service montage (kit de base hors options)",
+                    "Abri à outils - 161 x 273 cm",
+                    "Kit terrasse",
+                    "PVC fenêtres et portes - anthracite",
+                    "Volets roulants aluminium pour fenêtres / portes - anthracite",
+                    "Récupérateur VL-80U5-E",
+                    "Abri Bûches - 200 x 144 cm",
+                    "Jardinière - 70 x 22 cm",
+                    "Auvent - 300 x 150 cm",
+                    "PVC fenêtres et portes - Blanc",
+                    "Kit de couverture en bac acier",
+                    "Lot de traitement du bois (extérieur) - Incolore",
+                    "Volets roulants aluminium pour fenêtres / portes - blanc",
+                    "Système de gouttières en acier Ruukki - gris anthracite",
+                    "Couverture en bardeau bitumé",
+                    "Peintures pour habitations TIKKURILA Ultra Classic"
                 ]
             },
             {
@@ -375,14 +514,25 @@
                     "./style/img/Gilles-Plan2-Chalet.jpg"
                 ],
                 "options": [
-                    "Gouttières en aluminium",
-                    "Peinture extérieure personnalisée",
-                    "Installation électrique complète",
-                    "Système de chauffage",
-                    "Isolation renforcée",
-                    "Volets roulants motorisés",
-                    "Plancher chauffant",
-                    "Traitement du bois premium"
+                    "Base à ossature en bois",
+                    "Revêtement de sol en vinyle",
+                    "Toiture métallique Terrano",
+                    "Service montage (kit de base hors options)",
+                    "Abri à outils - 161 x 273 cm",
+                    "Kit terrasse",
+                    "PVC fenêtres et portes - anthracite",
+                    "Volets roulants aluminium pour fenêtres / portes - anthracite",
+                    "Récupérateur VL-80U5-E",
+                    "Abri Bûches - 200 x 144 cm",
+                    "Jardinière - 70 x 22 cm",
+                    "Auvent - 300 x 150 cm",
+                    "PVC fenêtres et portes - Blanc",
+                    "Kit de couverture en bac acier",
+                    "Lot de traitement du bois (extérieur) - Incolore",
+                    "Volets roulants aluminium pour fenêtres / portes - blanc",
+                    "Système de gouttières en acier Ruukki - gris anthracite",
+                    "Couverture en bardeau bitumé",
+                    "Peintures pour habitations TIKKURILA Ultra Classic"
                 ]
             },
         ];
@@ -405,21 +555,27 @@
                     <p>${chalet.text3}</p>
                     <p>${chalet.text4}</p>
                     <div class="options-container">
-    <h2 class="options-title">Options disponibles</h2>
-    <div class="options-grid">
-        ${chalet.options.map((option, index) => `
-            <div class="option-item">
-                <input type="checkbox" 
-                       id="option-${index}" 
-                       class="option-checkbox">
-                <label for="option-${index}" class="option-name">${option}</label>
-            </div>
-        `).join('')}
-    </div>
-</div>
-                    <p><strong>Besoin de plus de photo? de renseignements ou de conseils ?</strong></p>
-                    <p><strong>N'hésitez pas !</strong></p>
-                    <a href="contact.html"><button class="btn">Contactez-Nous !</button> </a> 
+                    <h2 class="options-title">Options disponibles</h2>
+                    <div class="options-grid">
+                        ${chalet.options.map((option, index) => `
+                            <div class="option-item">
+                                <div class="option-image">
+                                    <img src="${getOptionImage(option)}" alt="${option}" 
+                                         onerror="this.src='./style/img/options/default-option.jpg'">
+                                </div>
+                                <div class="option-content">
+                                    <input type="checkbox" 
+                                           id="option-${index}" 
+                                           class="option-checkbox">
+                                    <label for="option-${index}" class="option-name">${option}</label>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                <p><strong>Besoin de plus de photo? de renseignements ou de conseils ?</strong></p>
+                <p><strong>N'hésitez pas !</strong></p>
+                <a href="contact.html"><button class="btn">Contactez-Nous !</button></a>
             `;
         }
 
@@ -446,6 +602,7 @@
         <p class="footer-p">JBS SERVICES les chalets des Vosges <br>
             Limoges, France</p>
         <p class="footer-p">© 2024 - 2025 JBS SERVICES les chalets des Vosges</p>
+        <p class="footer-p">RGPD ET POLITIQUE DE CONFIDENTIALITE A VENIR!</p>
     </footer>
 
     <script src="https://kit.fontawesome.com/0419a1702a.js" crossorigin="anonymous"></script>
