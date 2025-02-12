@@ -564,10 +564,11 @@ const optionsImages = {
                                          onerror="this.src='./style/img/options/default-option.jpg'">
                                 </div>
                                 <div class="option-content">
+                                    
+                                    <label for="option-${index}" class="option-name">${option}</label>
                                     <input type="checkbox" 
                                            id="option-${index}" 
                                            class="option-checkbox">
-                                    <label for="option-${index}" class="option-name">${option}</label>
                                 </div>
                             </div>
                         `).join('')}
@@ -606,6 +607,8 @@ const optionsImages = {
     </footer>
 
     <script src="https://kit.fontawesome.com/0419a1702a.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="catalogue.js"></script>
 </body>
 
 </html>
