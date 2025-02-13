@@ -1,8 +1,4 @@
-/* --- FONT IMPORTATION --- */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* --- RESET AND BASE STYLES --- */
 * {
@@ -27,7 +23,7 @@ body {
 /* --- TYPOGRAPHY --- */
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 10rem;
+    font-size: 8rem;
     text-transform: uppercase;
     color: #ffffff;
 }
@@ -1229,7 +1225,7 @@ height: 135px;
 .option-name {
     font-weight: 500;
     color: #D2A87D;
-    height: 6rem;
+    height: 4rem;
 }
 
 #disclaimer-txt  {
@@ -1271,7 +1267,7 @@ height: 135px;
 
 @media (max-width: 1080px){
     h1 {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 }
 
@@ -1424,6 +1420,69 @@ height: 135px;
     color: gray;
 }
 
+
+
+
+/* Section des services */
+
+
+
+.service-page {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    padding-right: 30px;
+    background-color: transparent;
+    border: 2px solid #D2A87D;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-page:hover {
+    transform: scale(1.02);
+}
+
+.service-page img {
+    width: 320px;
+    height: 260px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+
+}
+
+.service-content-page {
+    flex: 1;
+}
+
+.service-content-page-p {
+    font-family: "Montserrat", serif;
+    color: #D2A87D;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.service-desc-page-p{
+    color: #D2A87D;
+    line-height: 1.6;
+    margin: .2rem 0;
+    font-family: "Fira Sans", serif;
+    margin-left: 2rem;
+}
+
+.service-content-page a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #D2A87D;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .testimonial-carousel {
@@ -1435,12 +1494,38 @@ height: 135px;
         flex: 1 1 90%; /* Each card takes up 90% of the screen width */
         margin: 10px 0; /* Add vertical spacing */
     }
+
+    .service-page{
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .service-page{
+        padding: 2rem;
+    }
+
+    .service-page img{
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        border: 2px solid #D2A87D;
+    }
+
+    .service-desc-page-p{
+        margin-left: 0;
+    }
 }
 
 @media (max-width: 480px) {
     .testimonial-card {
         flex: 1 1 100%; /* Each card takes up full width on mobile */
     }
+
+    .service-page img{
+        width: 75%;
+        height: 75%;
+    }
+
 }
 
 .star-rating {
@@ -1452,4 +1537,3 @@ height: 135px;
 .star {
     pointer-events: none; /* Désactive toute interaction */
 }
-
