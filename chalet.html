@@ -38,12 +38,14 @@
     </div>
 
     <div class="lightbox" id="lightbox">
+        <button class="arrow left" id="prev-arrow">&#10094;</button>
         <img src="" alt="Image agrandie" id="lightbox-img">
+        <button class="arrow right" id="next-arrow">&#10095;</button>
     </div>
 
-    <script>
 
-const optionsImages = {
+    <script>
+        const optionsImages = {
             "Base à ossature en bois": "./style/img/ossature-bois.png",
             "Revêtement de sol en vinyle": "./style/img/Revetementdesolvinyle.png",
             "Toiture métallique Terrano": "./style/img/Toituremetalliqueterrano.png",
@@ -65,7 +67,7 @@ const optionsImages = {
         };
 
         function getOptionImage(option) {
-            const matchingKey = Object.keys(optionsImages).find(key => 
+            const matchingKey = Object.keys(optionsImages).find(key =>
                 option.toLowerCase().includes(key.toLowerCase())
             );
             return matchingKey ? optionsImages[matchingKey] : './style/img/options/default-option.jpg';
@@ -538,59 +540,95 @@ const optionsImages = {
         ];
 
         if (!isNaN(chaletId) && chalets[chaletId]) {
-            const chalet = chalets[chaletId];
-            document.getElementById('chalet-details').innerHTML = `
-                <h1 class="article-title-name">${chalet.nom}</h1>
-                <img id="clickable-img" src="${chalet.image}" alt="Image de ${chalet.nom}" class="clickable" onclick="openLightbox('${chalet.image}')">
-                <p id="disclaimer-txt">*Veuillez noter que certaines images sont des modélisations 3D à titre illustratif et peuvent ne pas refléter avec exactitude la réalité des produits. </p>
-                <div class="extra-images">
-                    ${chalet.extraImages.map(img => `<img src="${img}" class="clickable" onclick="openLightbox('${img}')">`).join('')}
-                    
-                </div>
-                <p>${chalet.description}</p>
-                    <p><strong>Surface :</strong> ${chalet.surface}</p>
-                    <p><strong>Terrasse :</strong> ${chalet.Terrasse}</p>
-                    <p>${chalet.text1}</p>
-                    <p>${chalet.text2}</p>
-                    <p>${chalet.text3}</p>
-                    <p>${chalet.text4}</p>
-                    <div class="options-container">
-                    <h2 class="options-title">Options disponibles</h2>
-                    <div class="options-grid">
-                        ${chalet.options.map((option, index) => `
-                            <div class="option-item">
-                                <div class="option-image">
-                                    <img src="${getOptionImage(option)}" alt="${option}" 
-                                         onerror="this.src='./style/img/options/default-option.jpg'">
-                                </div>
-                                <div class="option-content">
-                                    
-                                    <label for="option-${index}" class="option-name">${option}</label>
-                                </div>
-                            </div>
-                        `).join('')}
+    const chalet = chalets[chaletId];
+    const allImages = [chalet.image, ...chalet.extraImages];  // Crée un tableau avec toutes les images
+
+    document.getElementById('chalet-details').innerHTML = `
+        <h1 class="article-title-name">${chalet.nom}</h1>
+        <img id="clickable-img" 
+             src="${chalet.image}" 
+             alt="Image de ${chalet.nom}" 
+             class="clickable" 
+             onclick="openLightbox('${chalet.image}', ${JSON.stringify(allImages).replace(/"/g, '&quot;')})">
+        <p id="disclaimer-txt">*Veuillez noter que certaines images sont des modélisations 3D à titre illustratif et peuvent ne pas refléter avec exactitude la réalité des produits.</p>
+        <div class="extra-images">
+            ${chalet.extraImages.map(img => 
+                `<img src="${img}" 
+                      class="clickable" 
+                      onclick="openLightbox('${img}', ${JSON.stringify(allImages).replace(/"/g, '&quot;')})">`
+            ).join('')}
+        </div>
+        <p>${chalet.description}</p>
+        <p><strong>Surface :</strong> ${chalet.surface}</p>
+        <p><strong>Terrasse :</strong> ${chalet.Terrasse}</p>
+        <p>${chalet.text1}</p>
+        <p>${chalet.text2}</p>
+        <p>${chalet.text3}</p>
+        <p>${chalet.text4}</p>
+        <div class="options-container">
+            <h2 class="options-title">Options disponibles</h2>
+            <div class="options-grid">
+                ${chalet.options.map((option, index) => `
+                    <div class="option-item">
+                        <div class="option-image">
+                            <img src="${getOptionImage(option)}" 
+                                 alt="${option}" 
+                                 onerror="this.src='./style/img/options/default-option.jpg'">
+                        </div>
+                        <div class="option-content">
+                            <label for="option-${index}" class="option-name">${option}</label>
+                        </div>
                     </div>
-                </div>
-                <p><strong>Besoin de plus de photo? de renseignements ou de conseils ?</strong></p>
-                <p><strong>N'hésitez pas !</strong></p>
-                <a href="contact.html"><button class="btn">Contactez-Nous !</button></a>
-            `;
-        }
+                `).join('')}
+            </div>
+        </div>
+        <p><strong>Besoin de plus de photo? de renseignements ou de conseils ?</strong></p>
+        <p><strong>N'hésitez pas !</strong></p>
+        <a href="contact.html"><button class="btn">Contactez-Nous !</button></a>
+    `;
+}
 
-        function openLightbox(imgSrc) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = imgSrc;
-            lightbox.classList.add('active');
+let currentImageIndex = 0;
+let currentChaletImages = [];
 
-            // Prevent scrolling on mobile
-            document.body.style.overflow = 'hidden';
-        }
+// Fonction d'ouverture de la lightbox
+function openLightbox(imgSrc, images) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
 
-        document.getElementById('lightbox').addEventListener('click', function () {
-            this.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
+    currentChaletImages = images;
+    currentImageIndex = currentChaletImages.indexOf(imgSrc);
+    lightboxImg.src = imgSrc;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Afficher les flèches seulement si plusieurs images sont disponibles
+    document.getElementById('prev-arrow').style.display = images.length > 1 ? 'block' : 'none';
+    document.getElementById('next-arrow').style.display = images.length > 1 ? 'block' : 'none';
+}
+
+// Gestionnaire pour fermer la lightbox
+document.getElementById('lightbox').addEventListener('click', function (e) {
+    if (e.target.id !== 'prev-arrow' && e.target.id !== 'next-arrow' && e.target.id !== 'lightbox-img') {
+        this.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Navigation image précédente
+document.getElementById('prev-arrow').addEventListener('click', function (e) {
+    e.stopPropagation();
+    currentImageIndex = (currentImageIndex - 1 + currentChaletImages.length) % currentChaletImages.length;
+    document.getElementById('lightbox-img').src = currentChaletImages[currentImageIndex];
+});
+
+// Navigation image suivante
+document.getElementById('next-arrow').addEventListener('click', function (e) {
+    e.stopPropagation();
+    currentImageIndex = (currentImageIndex + 1) % currentChaletImages.length;
+    document.getElementById('lightbox-img').src = currentChaletImages[currentImageIndex];
+});
+
     </script>
 
     <footer id="contact" class="footer">

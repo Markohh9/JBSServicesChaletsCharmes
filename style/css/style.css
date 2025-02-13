@@ -1537,3 +1537,22 @@ height: 135px;
 .star {
     pointer-events: none; /* Désactive toute interaction */
 }
+
+.lightbox .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1000;
+}
+.lightbox .left {
+    left: 10px;
+}
+.lightbox .right {
+    right: 10px;
+}
