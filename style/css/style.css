@@ -1518,7 +1518,7 @@ height: 135px;
 
 @media (max-width: 480px) {
     .testimonial-card {
-        flex: 1 1 100%; /* Each card takes up full width on mobile */
+        flex: 1 1 100%; /* Each card takes up full width on mobile   */
     }
 
     .service-page img{

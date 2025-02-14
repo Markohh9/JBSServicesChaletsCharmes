@@ -540,10 +540,10 @@
         ];
 
         if (!isNaN(chaletId) && chalets[chaletId]) {
-    const chalet = chalets[chaletId];
-    const allImages = [chalet.image, ...chalet.extraImages];  // Crée un tableau avec toutes les images
+            const chalet = chalets[chaletId];
+            const allImages = [chalet.image, ...chalet.extraImages]; // Crée un tableau avec toutes les images
 
-    document.getElementById('chalet-details').innerHTML = `
+            document.getElementById('chalet-details').innerHTML = `
         <h1 class="article-title-name">${chalet.nom}</h1>
         <img id="clickable-img" 
              src="${chalet.image}" 
@@ -586,49 +586,50 @@
         <p><strong>N'hésitez pas !</strong></p>
         <a href="contact.html"><button class="btn">Contactez-Nous !</button></a>
     `;
-}
+        }
 
-let currentImageIndex = 0;
-let currentChaletImages = [];
+        let currentImageIndex = 0;
+        let currentChaletImages = [];
 
-// Fonction d'ouverture de la lightbox
-function openLightbox(imgSrc, images) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
+        // Fonction d'ouverture de la lightbox
+        function openLightbox(imgSrc, images) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
 
-    currentChaletImages = images;
-    currentImageIndex = currentChaletImages.indexOf(imgSrc);
-    lightboxImg.src = imgSrc;
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
+            currentChaletImages = images;
+            currentImageIndex = currentChaletImages.indexOf(imgSrc);
+            lightboxImg.src = imgSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
 
-    // Afficher les flèches seulement si plusieurs images sont disponibles
-    document.getElementById('prev-arrow').style.display = images.length > 1 ? 'block' : 'none';
-    document.getElementById('next-arrow').style.display = images.length > 1 ? 'block' : 'none';
-}
+            // Afficher les flèches seulement si plusieurs images sont disponibles
+            document.getElementById('prev-arrow').style.display = images.length > 1 ? 'block' : 'none';
+            document.getElementById('next-arrow').style.display = images.length > 1 ? 'block' : 'none';
+        }
 
-// Gestionnaire pour fermer la lightbox
-document.getElementById('lightbox').addEventListener('click', function (e) {
-    if (e.target.id !== 'prev-arrow' && e.target.id !== 'next-arrow' && e.target.id !== 'lightbox-img') {
-        this.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-});
+        // Gestionnaire pour fermer la lightbox
+        document.getElementById('lightbox').addEventListener('click', function (e) {
+            if (e.target.id !== 'prev-arrow' && e.target.id !== 'next-arrow' && e.target.id !==
+                'lightbox-img') {
+                this.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
 
-// Navigation image précédente
-document.getElementById('prev-arrow').addEventListener('click', function (e) {
-    e.stopPropagation();
-    currentImageIndex = (currentImageIndex - 1 + currentChaletImages.length) % currentChaletImages.length;
-    document.getElementById('lightbox-img').src = currentChaletImages[currentImageIndex];
-});
+        // Navigation image précédente
+        document.getElementById('prev-arrow').addEventListener('click', function (e) {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + currentChaletImages.length) % currentChaletImages
+                .length;
+            document.getElementById('lightbox-img').src = currentChaletImages[currentImageIndex];
+        });
 
-// Navigation image suivante
-document.getElementById('next-arrow').addEventListener('click', function (e) {
-    e.stopPropagation();
-    currentImageIndex = (currentImageIndex + 1) % currentChaletImages.length;
-    document.getElementById('lightbox-img').src = currentChaletImages[currentImageIndex];
-});
-
+        // Navigation image suivante
+        document.getElementById('next-arrow').addEventListener('click', function (e) {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % currentChaletImages.length;
+            document.getElementById('lightbox-img').src = currentChaletImages[currentImageIndex];
+        });
     </script>
 
     <footer id="contact" class="footer">
