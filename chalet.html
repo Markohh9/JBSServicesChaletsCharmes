@@ -78,6 +78,7 @@
         const chalets = [{
                 "nom": "Chalet en bois SABINE",
                 "surface": "20 m²",
+                "prix": "20 695€",
                 "description": "La maison en bois SABINE, compacte et élégante, est un choix judicieux pour ceux qui recherchent une résidence de jardin accueillante.",
                 "image": "./style/img/Chalet-Sabine-Image-1-Construction.jpg",
                 "Terrasse": "7,25 m²",
@@ -117,6 +118,7 @@
             {
                 "nom": "Chalet en bois ALAIN",
                 "surface": "50 m²",
+                "prix": "16 955,00€",
                 "description": "Le chalet en bois ALAIN, lumineux et spacieux, saura attirer les regards grâce à sa conception architecturale contemporaine et épurée.",
                 "image": "./style/img/Chalet-ALAIN-Image-1-Construction.jpg",
                 "Terrasse": "24 m²",
@@ -156,6 +158,7 @@
             {
                 "nom": "Chalet en bois HELENE",
                 "surface": "54 m²",
+                "prix": "20 533,00€",
                 "description": "Un chalet de deux chambres à coucher avec un salon confortable pourrait devenir un lieu de résidence idéal pour une famille avec des enfants.",
                 "image": "./style/img/Chalet-Helene-Image-1-Construction.jpg",
                 "Terrasse": "25 m²",
@@ -195,6 +198,7 @@
             {
                 "nom": "Chalet en bois THEO",
                 "surface": "39 m²",
+                "prix": "20 767,00€",
                 "description": "THEO est un chalet en bois exceptionnel, alliant fonctionnalité, esthétique intemporelle et design moderne.",
                 "image": "./style/img/Chalet-Theo-Image-1-Construction.jpg",
                 "Terrasse": "13 m²",
@@ -235,6 +239,7 @@
             {
                 "nom": "Petite maison en bois ALHENA",
                 "surface": "48 m²",
+                "prix": "32 198,00€",
                 "description": "La petite maison en bois ALHENA peut être une superbe résidence pour un couple, une maison de vacances pour une petite famille.",
                 "image": "./style/img/Chalet-Alhena-Image-1-Construction.jpg",
                 "Terrasse": "Terrasse en Option",
@@ -274,6 +279,7 @@
             {
                 "nom": "Chalet en bois ALVIN",
                 "surface": "113 m²",
+                "prix": "85 098,00€",
                 "description": "La maison en bois ALVIN est une structure exceptionnellement fonctionnelle qui séduit déjà de nombreux clients.",
                 "image": "./style/img/Chalet-Alvin-Image-1-Construction.jpg",
                 "Terrasse": "13 m²",
@@ -314,6 +320,7 @@
             {
                 "nom": "Chalet en bois MARIE",
                 "surface": "132 m²",
+                "prix": "42 140,00€",
                 "description": "La maison en bois à deux étages MARIE est très appréciée par nombreux de nos clients.",
                 "image": "./style/img/Chalet-Marie-Image-1-Construction.jpg",
                 "Terrasse": "13,5 m²",
@@ -355,6 +362,7 @@
             {
                 "nom": "Chalet en bois DAVI",
                 "surface": "180 m²",
+                "prix": "59 823,00€",
                 "description": "La charmante maison en bois DAVI est un bâtiment à deux étages qui offre 5 chambres, 3 salles de bains.",
                 "image": "./style/img/Chalet-Davi-Image-1-Construction.jpg",
                 "Terrasse": " 30 m²",
@@ -395,6 +403,7 @@
             {
                 "nom": "Chalet en bois Gabriel",
                 "surface": "72 m²",
+                "prix": "38 237,00€",
                 "description": "Un superbe espace de vie de 25 m², comprenant une cuisine ouverte et une salle à manger, vous offrant un endroit agréable pour vous détendre avec votre famille.",
                 "image": "./style/img/Chalet-Gabriel-Image-1-Construction.jpg",
                 "Terrasse": " 17 m²",
@@ -434,6 +443,7 @@
             {
                 "nom": "Chalet en bois Jeanne",
                 "surface": "68 m²",
+                "prix": "24 464,00€",
                 "description": "Une salle de séjour avec un coin cuisine ouvert, pour que toute la famille puisse s'y retrouver !",
                 "image": "./style/img/Chalet-Jeanne-Image-1-Construction.jpg",
                 "Terrasse": "30 m²",
@@ -473,6 +483,7 @@
             {
                 "nom": "Chalet en bois Mauricette",
                 "surface": "80 m²",
+                "prix": "33 596,00€",
                 "description": "Un grand espace de vie de 63 m² avec une cuisine ouverte, vous permettant de communiquer avec votre famille tout en préparant le dîner.",
                 "image": "./style/img/Chalet-Mauricette-Image-1-Construction.jpg",
                 "Terrasse": "32 m²",
@@ -501,6 +512,7 @@
             {
                 "nom": "Chalet en bois Gilles",
                 "surface": "96 m²",
+                "prix": "38 854,00€",
                 "description": "Un grand espace pour les repas et la détente, qui peut devenir votre nouvel endroit préféré avec beaucoup de lumière et de rires.",
                 "image": "./style/img/Chalet-Gilles-Image-1-Construction.jpg",
                 "Terrasse": "35m² et 14m²",
@@ -550,7 +562,7 @@
              alt="Image de ${chalet.nom}" 
              class="clickable" 
              onclick="openLightbox('${chalet.image}', ${JSON.stringify(allImages).replace(/"/g, '&quot;')})">
-        <p id="disclaimer-txt">*Veuillez noter que certaines images sont des modélisations 3D à titre illustratif et peuvent ne pas refléter avec exactitude la réalité des produits.</p>
+        <p id="disclaimer-txt">*Veuillez noter que certaines images sont des modélisations 3D à titre illustratif et peuvent ne pas refléter avec exactitude la réalité des produits.<br>Les prix indiqués sont les prix de base et peuvent donc varier en fonction des options séléctionnées !</p>
         <div class="extra-images">
             ${chalet.extraImages.map(img => 
                 `<img src="${img}" 
@@ -561,6 +573,7 @@
         <p>${chalet.description}</p>
         <p><strong>Surface :</strong> ${chalet.surface}</p>
         <p><strong>Terrasse :</strong> ${chalet.Terrasse}</p>
+        <p><strong>Prix :</strong> ${chalet.prix}</p>
         <p>${chalet.text1}</p>
         <p>${chalet.text2}</p>
         <p>${chalet.text3}</p>

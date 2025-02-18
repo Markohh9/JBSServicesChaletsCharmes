@@ -1235,7 +1235,7 @@ height: 135px;
     font-stretch: 100%;
     font-weight: 200;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     width: 100%;
 }
 
